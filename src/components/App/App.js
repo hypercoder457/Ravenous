@@ -30,7 +30,7 @@ class App extends React.Component {
       <div className="App">
         <h1>ravenous</h1>
         <SearchBar />
-        <BusinessList businesses={businesses} key={business.id}/> 
+        <BusinessList businesses={businesses} /> 
       </div>
     );
   }
