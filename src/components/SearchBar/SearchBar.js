@@ -12,6 +12,9 @@ class SearchBar extends React.Component {
             sortBy: 'best_match'
         };
 
+        this.handleTermChange = this.handleTermChange.bind(this);
+        this.handleLocationChange = this.handleLocationChange.bind(this);
+
         this.sortByOptions = {
             "Best Match": 'best_match',
             "Highest Rated": 'rating',
@@ -29,7 +32,15 @@ class SearchBar extends React.Component {
 
     handleSortByChange(sortByOption) {
         this.setState({ sortBy: sortByOption });
-    }
+    };
+
+    handleTermChange(e) {
+        this.setState({ term: e.target.value });
+    };
+
+    handleLocationChange(e) {
+        this.setState({ location: e.target.value });
+    };
 
     renderSortByOptions() {
         return Object.keys(this.sortByOptions).map(sortByOption => {
