@@ -10,8 +10,20 @@ const Yelp = {
             return response.json();
         }).then(jsonResponse => {
             if(jsonResponse.businesses) {
+                console.log(jsonResponse.businesses);
                 return jsonResponse.businesses.map(business => {
-                    return {}
+                    return {
+                        id: business.id,
+                        imageSrc: business.image_url,
+                        name: business.name,
+                        address: business.address,
+                        city: business.city,
+                        state: business.state,
+                        zipCode: business.zip_code,
+                        category: business.category,
+                        rating: business.rating,
+                        reviewCount: business.review_count
+                    };
                 });
             }
         })
